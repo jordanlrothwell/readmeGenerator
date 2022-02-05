@@ -32,8 +32,16 @@ const questions = [
   },
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function to create README
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      return new Error(err);
+    }
+
+    console.log(`Success! Your README has been saved to ${filePath}`)
+  });
+}
 
 // TODO: Create a function to initialize app
 function init() {}
