@@ -4,6 +4,7 @@ const fs = require("fs");
 
 // import internal modules
 const generateMarkdown = require("./utils/generateMarkdown");
+const { get } = require("http");
 
 // array of questions for user input
 const questions = [
@@ -36,35 +37,24 @@ const questions = [
 ];
 
 // function to create README
-function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => {
+const writeToFile = function (fileName, content) {
+  fs.writeFile(fileName, content, (err) => {
     if (err) {
-      return new Error(err);
+      console.error(err);
+      return;
     }
-
-    console.log(`Success! Your README has been saved to XXXX`);
+    console.log(`README successfully created.`);
   });
-}
-
-// function which returns user input as promise
-const getUserInput = new Promise((resolve, reject) => {
-  const userPrompt = inquirer.prompt(questions);
-  if (userPrompt) {
-    resolve(userPrompt);
-  } else {
-    reject(new Error("No user input."));
-  }
-});
-
-// TODO: Create a function to initialize app
-
-const init = function () {
-  getUserInput()
-    .then((result) => {
-      return generateMarkdown(result);
-    })
-    .then((md) => {writeToFile('testREADME.md', md)});
 };
 
-// Function call to initialize app
+// function to initialize app
+const init = function () {
+  // get our user input
+  inquirer
+    .prompt(questions)
+    .then((answers) => generateMarkdown(answers))
+    .then((mdContent) => writeToFile(`TEST_README.md`, mdContent));
+};
+
+// function call to initialize app
 init();
