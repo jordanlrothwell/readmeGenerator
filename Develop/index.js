@@ -2,33 +2,36 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+// import internal modules
+const generateMarkdown = require("./utils/generateMarkdown");
+
 // array of questions for user input
 const questions = [
   {
     type: "list",
     name: "license",
-    message: "",
-    choices: [],
+    message: "what license",
+    choices: ["this one", "or this one"],
   },
   {
     type: "input",
     name: "title",
-    message: "",
+    message: "what title",
   },
   {
     type: "input",
     name: "description",
-    message: "",
+    message: "what description",
   },
   {
     type: "input",
     name: "usage",
-    message: "",
+    message: "how use",
   },
   {
-    type: "",
+    type: "input",
     name: "features",
-    message: "",
+    message: "any features?",
   },
 ];
 
@@ -39,12 +42,29 @@ function writeToFile(fileName, data) {
       return new Error(err);
     }
 
-    console.log(`Success! Your README has been saved to ${filePath}`)
+    console.log(`Success! Your README has been saved to XXXX`);
   });
 }
 
+// function which returns user input as promise
+const getUserInput = new Promise((resolve, reject) => {
+  const userPrompt = inquirer.prompt(questions);
+  if (userPrompt) {
+    resolve(userPrompt);
+  } else {
+    reject(new Error("No user input."));
+  }
+});
+
 // TODO: Create a function to initialize app
-function init() {}
+
+const init = function () {
+  getUserInput()
+    .then((result) => {
+      return generateMarkdown(result);
+    })
+    .then((md) => {writeToFile('testREADME.md', md)});
+};
 
 // Function call to initialize app
 init();
