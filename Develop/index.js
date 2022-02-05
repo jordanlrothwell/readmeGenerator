@@ -4,35 +4,54 @@ const fs = require("fs");
 
 // import internal modules
 const generateMarkdown = require("./utils/generateMarkdown");
-const { get } = require("http");
 
 // array of questions for user input
 const questions = [
   {
-    type: "list",
-    name: "license",
-    message: "what license",
-    choices: ["this one", "or this one"],
+    type: "input",
+    name: "githubUsername",
+    message: "What's your github username?",
+  },
+  {
+    type: "input",
+    name: "githubRepoName",
+    message: "If this project has a github repository, put its name here (not its URL):",
   },
   {
     type: "input",
     name: "title",
-    message: "what title",
+    message: "What is the title of this project?",
+  },
+  {
+    type: "input",
+    name: "tagline",
+    message: "Write a tagline for your project:",
+  },
+  {
+    type: "input",
+    name: "motivation",
+    message: "What motivated you to create this project?",
   },
   {
     type: "input",
     name: "description",
-    message: "what description",
+    message: "Write a brief description for your project:",
   },
   {
     type: "input",
     name: "usage",
-    message: "how use",
+    message: "Write some instructions on how to use your code:",
   },
   {
     type: "input",
     name: "features",
     message: "any features?",
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "what license",
+    choices: ["this one", "or this one"],
   },
 ];
 
