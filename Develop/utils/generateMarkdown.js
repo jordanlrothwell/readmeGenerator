@@ -83,11 +83,21 @@ const licenses = [
 ];
 
 // function to get badge based on choice of license
-function getBadge (choice) {
+const getBadge = function (choice) {
   var matchingBadge = licenses.filter(function (licenseObj) {
     return licenseObj.license == choice;
-  })
+  });
   return matchingBadge[0].badge;
+};
+
+// function to return array of all license values in 'licences'
+const getAllLicences = function () {
+  const licencesValues = licenses.map((obj) => Object.values(obj));
+  const licensesArray = [];
+  for (arr of licencesValues) {
+    licensesArray.push(arr[0]);
+  }
+  return licensesArray;
 };
 
 // keeping track of the variables we're (maybe) going to pass into the template string
@@ -102,7 +112,6 @@ let gettingStarted;
 
 //function to generate md for README
 function generateMarkdown(answers) {
-  
   return `<div id="top"></div>
 
   [![Contributors][contributors-shield]][contributors-url]
@@ -117,7 +126,9 @@ function generateMarkdown(answers) {
   <!-- PROJECT LOGO -->
   <br />
   <div align="center">
-    <a href="https://github.com/${answers.githubUsername}/${answers.githubRepoName}">  
+    <a href="https://github.com/${answers.githubUsername}/${
+    answers.githubRepoName
+  }">  
     <img src="${answers.imagePath}" alt="Logo" width="80" height="80">
     </a>
   
@@ -126,14 +137,22 @@ function generateMarkdown(answers) {
     <p align="center">
       ${answers.tagline}
       <br />
-      <a href="https://github.com/${answers.githubUsername}/${answers.githubRepoName}"><strong>Jump to the code »</strong></a>
+      <a href="https://github.com/${answers.githubUsername}/${
+    answers.githubRepoName
+  }"><strong>Jump to the code »</strong></a>
       <br />
       <br />
-      <a href="https://github.com/${answers.githubUsername}/${answers.githubRepoName}">View Demo</a>
+      <a href="https://github.com/${answers.githubUsername}/${
+    answers.githubRepoName
+  }">View Demo</a>
       ·
-      <a href="https://github.com/${answers.githubUsername}/${answers.githubRepoName}/issues">Report Bug</a>
+      <a href="https://github.com/${answers.githubUsername}/${
+    answers.githubRepoName
+  }/issues">Report Bug</a>
       ·
-      <a href="https://github.com/${answers.githubUsername}/${answers.githubRepoName}/issues">Request Feature</a>
+      <a href="https://github.com/${answers.githubUsername}/${
+    answers.githubRepoName
+  }/issues">Request Feature</a>
     </p>
   </div>
   
@@ -181,7 +200,7 @@ function generateMarkdown(answers) {
   
   The following major frameworks/libraries were used to bootstrap this project:
   
-  ${/*should put checkbox here */''}
+  ${/*should put checkbox here */ ""}
   * [Next.js](https://nextjs.org/)
   * [React.js](https://reactjs.org/)
   * [Vue.js](https://vuejs.org/)
@@ -193,16 +212,7 @@ function generateMarkdown(answers) {
   
   <p align="right">(<a href="#top">back to top</a>)</p>
   
-  
-  
-  <!-- GETTING STARTED -->
-  ## Getting Started
-  
-  ${answers.gettingStarted /* should this be dot points? */}
-  
-  <p align="right">(<a href="#top">back to top</a>)</p>
-  
-  
+
   
   <!-- USAGE EXAMPLES -->
   ## Usage
@@ -216,7 +226,9 @@ function generateMarkdown(answers) {
   <!-- LICENSE -->
   ## License
   
-  Distributed under the ${answers.license}. See ${answers.licenseLink} for more information.
+  Distributed under the ${answers.license}. See ${
+    answers.licenseLink
+  } for more information.
   
   <p align="right">(<a href="#top">back to top</a>)</p>
   
@@ -265,7 +277,8 @@ function generateMarkdown(answers) {
   [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
   [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
   [linkedin-url]: https://linkedin.com/in/othneildrew
-  [product-screenshot]: images/screenshot.png;`
+  [product-screenshot]: images/screenshot.png;`;
 }
 
 module.exports = generateMarkdown;
+module.exports = getAllLicences;

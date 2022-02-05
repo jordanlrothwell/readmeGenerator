@@ -4,6 +4,11 @@ const fs = require("fs");
 
 // import internal modules
 const generateMarkdown = require("./utils/generateMarkdown");
+const getAllLicences = require("./utils/generateMarkdown");
+
+const licences = generateMarkdown.licenses;
+
+console.log(licences);
 
 // array of questions for user input
 const questions = [
@@ -15,7 +20,8 @@ const questions = [
   {
     type: "input",
     name: "githubRepoName",
-    message: "If this project has a github repository, put its name here (not its URL):",
+    message:
+      "If this project has a github repository, put its name here (not its URL):",
   },
   {
     type: "input",
@@ -38,20 +44,22 @@ const questions = [
     message: "Write a brief description for your project:",
   },
   {
+    type: "checkbox",
+    name: "builtWith",
+    message:
+      "What major frameworks/libraries did you use to bootstrap your project?",
+    choices: [],
+  },
+  {
     type: "input",
     name: "usage",
     message: "Write some instructions on how to use your code:",
   },
   {
-    type: "input",
-    name: "features",
-    message: "any features?",
-  },
-  {
     type: "list",
     name: "license",
-    message: "what license",
-    choices: ["this one", "or this one"],
+    message: "What license ",
+    choices: getAllLicences(),
   },
 ];
 
@@ -76,4 +84,7 @@ const init = function () {
 };
 
 // function call to initialize app
-init();
+
+// init()
+
+console.log(getAllLicences())
