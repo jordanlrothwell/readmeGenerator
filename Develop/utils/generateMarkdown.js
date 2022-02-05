@@ -83,14 +83,14 @@ const licenses = [
 ];
 
 // function to get badge based on choice of license
-const getBadge = function (choice) {
+function getBadge (choice) {
   var matchingBadge = licenses.filter(function (license) {
     return license.license == choice;
   })
-  console.log(matchingBadge);
+  return matchingBadge[0].badge;
 };
 
-getBadge("Unlicense")
+console.log(getBadge("WTFPL")); 
 
 function renderLicenseBadge(license) {}
 
