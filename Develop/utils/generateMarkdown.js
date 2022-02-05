@@ -1,4 +1,4 @@
-// If there is no license, return an empty string
+// array of licenses with matchings badges
 const licenses = [
   {
     license: "Apache 2.0",
@@ -81,6 +81,16 @@ const licenses = [
       "[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)",
   },
 ];
+
+// function to get badge based on choice of license
+const getBadge = function (choice) {
+  var matchingBadge = licenses.filter(function (license) {
+    return license.license == choice;
+  })
+  console.log(matchingBadge);
+};
+
+getBadge("Unlicense")
 
 function renderLicenseBadge(license) {}
 
