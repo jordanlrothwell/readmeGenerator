@@ -241,7 +241,9 @@ Distributed under the ${data.license} license. See ${licenceURL} for more inform
 ## QUESTIONS
 
 Email me: [${data.email}](${data.email})
+
 Project Link: [https://github.com/${data.githubUsername}/${data.githubRepoName}](https://github.com/${data.githubUsername}/${data.githubRepoName})
+
 LinkedIn: [https://linkedin.com/in/${data.linkedinUsername}](https://linkedin.com/in/${data.linkedinUsername})
 
 <p align="right">(<a href="#top">back to top</a>)</p>
