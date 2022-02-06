@@ -25,6 +25,11 @@ const questions = [
   },
   {
     type: "input",
+    name: "email",
+    message: "What's your email address?",
+  },
+  {
+    type: "input",
     name: "title",
     message: "What is the title of this project?",
   },
@@ -44,9 +49,19 @@ const questions = [
     message: "Write a brief description for your project:",
   },
   {
+    type: "confirm",
+    name: "contribution",
+    message: "Would you like others to be able to contribute to your code?",
+  },
+  {
     type: "input",
     name: "usage",
     message: "Write some instructions on how to use your code:",
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "How have you tested your code?",
   },
   {
     type: "list",
