@@ -129,7 +129,7 @@ function generateMarkdown(data) {
   const licenceURL = getLicenseURL(data.license);
   return `<div id="top"></div>
 
-[![${data.license} License][license-shield]]
+${badge}
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -215,7 +215,6 @@ LinkedIn: [https://linkedin.com/in/${data.linkedinUsername}](https://linkedin.co
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[license-shield]: ${badge}
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/${data.linkedinUsername}`;
 }
