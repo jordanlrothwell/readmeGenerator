@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -15,7 +15,7 @@
   <h3 align="center">README Generator</h3>
 
   <p align="center">
-    A simple README generator for your github project.
+    A simple README.md generator for your github projects.
     <br />
     <a href="https://github.com/jordanlrothwell/readmeGenerator"><strong>Jump to the code »</strong></a>
     <br />
@@ -36,8 +36,9 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#tests">Tests</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#questions">Questionsd</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -47,9 +48,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-I created this as a homework piece, based on the excellent template created by othneildrew: https://github.com/othneildrew/Best-README-Template/blob/master/README.md.
+Completing my homework.
 
-It takes user input through the console and uses it to generate a README file with correct markdown syntax.
+It does what the tagline says - read my real README for a real description.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -58,30 +59,54 @@ It takes user input through the console and uses it to generate a README file wi
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-To generate your own README using this, just clone the repository and run `npm init`; `npm i`; and then `node.index` to begin the series of prompts. Your file will generate automatically afterwards.
-
-<img src="gifs/demonstration.gif" alt="demo">
-
-
+Clone it, get the npm modules, then run it in node.js.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- TESTS -->
+## Tests
+
+Running it like you're seeing me do now.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the Unlicense license. See http://unlicense.org/ for more information.
+Distributed under the MIT license. See https://opensource.org/licenses/MIT for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
-<!-- CONTACT -->
-## Contact
+<!-- QUESTIONS -->
+## QUESTIONS
 
+Email me: [jordanlrothwell@gmail.com](jordanlrothwell@gmail.com)
 Project Link: [https://github.com/jordanlrothwell/readmeGenerator](https://github.com/jordanlrothwell/readmeGenerator)
-
 LinkedIn: [https://linkedin.com/in/jordan-rothwell-971853128](https://linkedin.com/in/jordan-rothwell-971853128)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
