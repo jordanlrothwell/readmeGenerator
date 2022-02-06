@@ -111,7 +111,7 @@ let description;
 let gettingStarted;
 
 //function to generate md for README
-function generateMarkdown(answers) {
+function generateMarkdown(data) {
   return `<div id="top"></div>
 
   [![Contributors][contributors-shield]][contributors-url]
@@ -126,32 +126,32 @@ function generateMarkdown(answers) {
   <!-- PROJECT LOGO -->
   <br />
   <div align="center">
-    <a href="https://github.com/${answers.githubUsername}/${
-    answers.githubRepoName
+    <a href="https://github.com/${data.githubUsername}/${
+    data.githubRepoName
   }">  
-    <img src="${answers.imagePath}" alt="Logo" width="80" height="80">
+    <img src="${data.imagePath}" alt="Logo" width="80" height="80">
     </a>
   
-    <h3 align="center">${answers.title}</h3>
+    <h3 align="center">${data.title}</h3>
   
     <p align="center">
-      ${answers.tagline}
+      ${data.tagline}
       <br />
-      <a href="https://github.com/${answers.githubUsername}/${
-    answers.githubRepoName
+      <a href="https://github.com/${data.githubUsername}/${
+    data.githubRepoName
   }"><strong>Jump to the code »</strong></a>
       <br />
       <br />
-      <a href="https://github.com/${answers.githubUsername}/${
-    answers.githubRepoName
+      <a href="https://github.com/${data.githubUsername}/${
+    data.githubRepoName
   }">View Demo</a>
       ·
-      <a href="https://github.com/${answers.githubUsername}/${
-    answers.githubRepoName
+      <a href="https://github.com/${data.githubUsername}/${
+    data.githubRepoName
   }/issues">Report Bug</a>
       ·
-      <a href="https://github.com/${answers.githubUsername}/${
-    answers.githubRepoName
+      <a href="https://github.com/${data.githubUsername}/${
+    data.githubRepoName
   }/issues">Request Feature</a>
     </p>
   </div>
@@ -188,9 +188,9 @@ function generateMarkdown(answers) {
   
   [![Product Name Screen Shot][product-screenshot]](https://example.com)
   
-  ${answers.motivation}
+  ${data.motivation}
 
-  ${answers.description}
+  ${data.description}
   
   <p align="right">(<a href="#top">back to top</a>)</p>
   
@@ -226,8 +226,8 @@ function generateMarkdown(answers) {
   <!-- LICENSE -->
   ## License
   
-  Distributed under the ${answers.license}. See ${
-    answers.licenseLink
+  Distributed under the ${data.license}. See ${
+    data.licenseLink
   } for more information.
   
   <p align="right">(<a href="#top">back to top</a>)</p>
@@ -280,5 +280,5 @@ function generateMarkdown(answers) {
   [product-screenshot]: images/screenshot.png;`;
 }
 
-module.exports = generateMarkdown;
-module.exports = getAllLicences;
+exports.generateMarkdown = generateMarkdown;
+exports.getAllLicences = getAllLicences;

@@ -4,11 +4,6 @@ const fs = require("fs");
 
 // import internal modules
 const generateMarkdown = require("./utils/generateMarkdown");
-const getAllLicences = require("./utils/generateMarkdown");
-
-const licences = generateMarkdown.licenses;
-
-console.log(licences);
 
 // array of questions for user input
 const questions = [
@@ -44,13 +39,6 @@ const questions = [
     message: "Write a brief description for your project:",
   },
   {
-    type: "checkbox",
-    name: "builtWith",
-    message:
-      "What major frameworks/libraries did you use to bootstrap your project?",
-    choices: [],
-  },
-  {
     type: "input",
     name: "usage",
     message: "Write some instructions on how to use your code:",
@@ -58,8 +46,8 @@ const questions = [
   {
     type: "list",
     name: "license",
-    message: "What license ",
-    choices: getAllLicences(),
+    message: "Choose a license for your project:",
+    choices: generateMarkdown.getAllLicences(),
   },
 ];
 
@@ -79,12 +67,9 @@ const init = function () {
   // get our user input
   inquirer
     .prompt(questions)
-    .then((answers) => generateMarkdown(answers))
+    .then((answers) => generateMarkdown.generateMarkdown(answers))
     .then((mdContent) => writeToFile(`TEST_README.md`, mdContent));
 };
 
 // function call to initialize app
-
-// init()
-
-console.log(getAllLicences())
+init();
